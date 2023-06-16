@@ -42,6 +42,14 @@ if (session_status() === PHP_SESSION_NONE) {
                 include 'datapermintaan.php';
             } elseif ($_GET['Page'] == "ajukan-permintaan") {
                 include 'createpermintaan.php';
+            } elseif ($_GET['Page'] == "report") {
+                include 'report.php';
+            } elseif ($_GET['Page'] == "data-distribusi") {
+                include 'datadistribusi.php';
+            } elseif ($_GET['Page'] == "tambah-distribusi") {
+                include 'createdistribusi.php';
+            } else {
+                echo '404 Not Found';
             }
         }
         ?>

@@ -40,7 +40,7 @@ if (isset($_SESSION['success_message'])) {
         </thead>
         <tbody>
             <?php
-            $crud = new CRUD();
+            $crud = new CrudDriver();
             $datas = $crud->read();
             $no = 1;
             foreach ($datas as $data) {

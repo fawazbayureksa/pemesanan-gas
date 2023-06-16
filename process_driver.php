@@ -2,7 +2,7 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-class CRUD
+class CrudDriver
 {
     private $db; // Koneksi ke database
 
@@ -39,7 +39,7 @@ class CRUD
 }
 
 // Inisialisasi objek CRUD
-$crud = new CRUD();
+$crud = new CrudDriver();
 
 // Tangani aksi yang dikirim dari form
 if (isset($_POST['action'])) {

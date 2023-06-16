@@ -1,8 +1,13 @@
+<?php
+
+// print_r($_SESSION['admin']['id'])
+?>
+
 <div class="p-3">
     <h3>Pengajuan Permintaan</h3>
     <form action="process_permintaan.php" method="POST">
         <input type="hidden" name="action" id="action" value="create">
-        <input type="hidden" name="id_pangkalan" value="<?= $_SESSION['id'] ?>">
+        <input type="hidden" name="id_pangkalan" value="<?= $_SESSION['admin']['id'] ?>">
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
@@ -40,7 +45,7 @@
             </div>
         </div>
         <input type="submit" class="btn btn-success float-end ms-3" value="Kirim">
-        <a class="btn btn-secondary float-end" href="index.php?Page=data-pangkalan">Kembali</a>
+        <!-- <a class="btn btn-secondary float-end" href="index.php?Page=data-permintaan">Kembali</a> -->
     </form>
 </div>
 

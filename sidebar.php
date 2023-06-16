@@ -25,11 +25,13 @@
                             <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline text-white">Permintaan</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="index.php?Page=ajukan-permintaan" class="nav-link align-middle px-0 ">
-                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline text-white">Ajukan Permintaan</span>
-                        </a>
-                    </li>
+                    <?php if (($_SESSION['admin']['is_type']) == 1) { ?>
+                        <li class="nav-item">
+                            <a href="index.php?Page=ajukan-permintaan" class="nav-link align-middle px-0 ">
+                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline text-white">Ajukan Permintaan</span>
+                            </a>
+                        </li>
+                    <?php } ?>
                     <!-- <li>
                         <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline text-white">Dashboard</span> </a>
@@ -67,16 +69,16 @@
                                 <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline text-white">Data Pangkalan</span></a>
                         </li>
                         <li>
-                            <a href="index.php?Page=report-transaction" class="nav-link px-0 align-middle">
+                            <a href="index.php?Page=data-distribusi" class="nav-link px-0 align-middle">
                                 <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline text-white">Data Distribusi</span></a>
                         </li>
                     <?php } ?>
                     <li>
-                        <a href="index.php?Page=report-transaction" class="nav-link px-0 align-middle">
+                        <a href="index.php?Page=report" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline text-white">Laporan</span></a>
                     </li>
                     <li>
-                        <a href="welcome_page.php" class="nav-link px-0 align-middle">
+                        <a href="login.php" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline text-white">Logout</span></a>
                     </li>
                     <!-- <li>

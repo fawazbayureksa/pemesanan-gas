@@ -21,7 +21,7 @@ session_start();
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card mt-5">
-                    <div class="card-header bg-primary text-center">
+                    <div class="card-header bg-primary-y734 text-center">
                         <!-- <img src="assets/img/logo.png" width="50px"> -->
                         <h3 style="color: white;">Login</h3>
                     </div>
@@ -39,7 +39,7 @@ session_start();
                                     </div>
                                     <div class="mt-3 text-center">
                                         <button class="btn btn-primary btn-md" name="login"><i class="fa fa-paper-plane"></i> Masuk</button>
-                                        <a href="welcome_page.php" class="btn btn-danger btn-md">Kembali</a>
+                                        <a href="login.php" class="btn btn-danger btn-md">Kembali</a>
                                     </div>
                                 </form>
                             </div>
