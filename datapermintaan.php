@@ -41,7 +41,7 @@ if ($_SESSION['admin']['id'] == 0000) {
                     <td><?= $no++ ?></td>
                     <td><?= $data['nama_pemilik_pangkalan'] ?></td>
                     <td><?= $data['barang'] ?></td>
-                    <td><?= $data['harga'] ?></td>
+                    <td>Rp<?= number_format($data['harga']) ?></td>
                     <td><?= $data['jumlah_permintaan'] ?></td>
 
                     <td>
@@ -53,7 +53,7 @@ if ($_SESSION['admin']['id'] == 0000) {
                             echo   'Dalam Proses';
                         } ?></span>
                     </td>
-                    <td><?= $data['jumlah_bayar'] ?></td>
+                    <td>Rp<?= number_format($data['jumlah_bayar']) ?></td>
                     <td width="20%" class="text-center">
                         <?php if ($_SESSION['admin']['is_type'] == 0) { ?>
                             <?php if ($data['status_permintaan']  == 1) { ?>

@@ -20,6 +20,13 @@ include 'process_report.php';
             </div>
         </div>
     </form>
+    <?php
+    if (isset($_POST['cari'])) {
+    ?>
+        <p>Hasil dari tanggal <?= $_POST['startDate'] ?> dan <?= $_POST['endDate'] ?></p>
+    <?php
+    }
+    ?>
     <table class="table table-bordered mt-4">
         <thead>
             <tr>
@@ -29,6 +36,7 @@ include 'process_report.php';
                 <th>Pangkalan</th>
                 <th>Barang</th>
                 <th>Jumlah</th>
+                <th>Harga</th>
                 <th>Total</th>
             </tr>
         </thead>
@@ -50,7 +58,8 @@ include 'process_report.php';
                     <td><?= $data['nama_pemilik_pangkalan'] ?></td>
                     <td><?= $data['barang'] ?></td>
                     <td><?= $data['jumlah_permintaan'] ?></td>
-                    <td><?= $data['jumlah_bayar'] ?></td>
+                    <td>Rp<?= number_format($data['harga']) ?></td>
+                    <td>Rp<?= number_format($data['jumlah_bayar']) ?></td>
                 </tr>
             <?php } ?>
         </tbody>

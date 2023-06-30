@@ -58,7 +58,7 @@ if (isset($_POST['action'])) {
         $id = $_POST['id'];
         $no_kendaraan = $_POST['no_kendaraan'];
         $crud->update($id, $no_kendaraan);
-        $_SESSION['success_message'] = "Data $action berhasil diubah!";
+        $_SESSION['success_message'] = "Data berhasil diubah!";
     }
     header('Location: index.php?Page=data-kendaraan');
 }

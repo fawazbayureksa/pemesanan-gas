@@ -24,7 +24,7 @@ class ReadOption
     public function readPermintaan()
     {
         // Query untuk membaca semua data
-        $query = $this->db->query('SELECT tpermintaan.id AS id_permintaan,tpermintaan.barang AS barang,tpangkalan.id AS id_pangkalan, tpangkalan.nama_pemilik as nama_pemilik_pangkalan FROM tpermintaan JOIN tpangkalan ON tpermintaan.id_pangkalan = tpangkalan.id WHERE status_permintaan = 0');
+        $query = $this->db->query('SELECT tpermintaan.id AS id_permintaan,tpermintaan.barang AS barang,tpangkalan.id AS id_pangkalan, tpangkalan.nama_pemilik as nama_pemilik_pangkalan FROM tpermintaan JOIN tpangkalan ON tpermintaan.id_pangkalan = tpangkalan.id WHERE status_permintaan = 0 OR status_permintaan = 1');
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 }

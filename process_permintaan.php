@@ -24,13 +24,13 @@ class CrudPermintaan
     public function read()
     {
         // Query untuk membaca semua data
-        $query = $this->db->query('SELECT tpermintaan.id AS id_permintaan,tpermintaan.barang AS barang,tpangkalan.id AS id_pangkalan, tpangkalan.nama_pemilik as nama_pemilik_pangkalan, tpermintaan.harga AS harga, tpermintaan.jumlah_permintaan AS jumlah_permintaan,  tpermintaan.status_permintaan AS status_permintaan, tpermintaan.jumlah_bayar AS jumlah_bayar FROM tpermintaan JOIN tpangkalan ON tpermintaan.id_pangkalan = tpangkalan.id');
+        $query = $this->db->query('SELECT tpermintaan.id AS id_permintaan,tpermintaan.barang AS barang,tpangkalan.id AS id_pangkalan, tpangkalan.nama_pemilik as nama_pemilik_pangkalan, tpermintaan.harga AS harga, tpermintaan.jumlah_permintaan AS jumlah_permintaan,  tpermintaan.status_permintaan AS status_permintaan, tpermintaan.jumlah_bayar AS jumlah_bayar FROM tpermintaan JOIN tpangkalan ON tpermintaan.id_pangkalan = tpangkalan.id ORDER BY tgl_permintaan DESC ');
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
     public function readSelf($id)
     {
         // Query untuk membaca semua data
-        $query = $this->db->query("SELECT tpermintaan.id AS id_permintaan,tpermintaan.barang AS barang,tpangkalan.id AS id_pangkalan, tpangkalan.nama_pemilik as nama_pemilik_pangkalan, tpermintaan.harga AS harga, tpermintaan.jumlah_permintaan AS jumlah_permintaan,  tpermintaan.status_permintaan AS status_permintaan, tpermintaan.jumlah_bayar AS jumlah_bayar FROM tpermintaan JOIN tpangkalan ON tpermintaan.id_pangkalan = tpangkalan.id WHERE id_pangkalan ='$id' ");
+        $query = $this->db->query("SELECT tpermintaan.id AS id_permintaan,tpermintaan.barang AS barang,tpangkalan.id AS id_pangkalan, tpangkalan.nama_pemilik as nama_pemilik_pangkalan, tpermintaan.harga AS harga, tpermintaan.jumlah_permintaan AS jumlah_permintaan,  tpermintaan.status_permintaan AS status_permintaan, tpermintaan.jumlah_bayar AS jumlah_bayar FROM tpermintaan JOIN tpangkalan ON tpermintaan.id_pangkalan = tpangkalan.id WHERE id_pangkalan ='$id' ORDER BY tgl_permintaan DESC");
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
     public function delete($id)
@@ -84,7 +84,7 @@ if (isset($_GET['action'])) {
         $id = $_GET['id'];
         $status_permintaan = 2;
         $crud->update($id, $status_permintaan);
-        $_SESSION['success_message'] = "Permintaan berhasil diselesaikan $id!";
+        $_SESSION['success_message'] = "Permintaan berhasil diselesaikan!";
     } elseif ($action == 'cancel' && isset($_GET['id'])) {
         $id = $_GET['id'];
         $status_permintaan = 3;

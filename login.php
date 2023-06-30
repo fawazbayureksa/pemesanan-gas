@@ -22,7 +22,6 @@ session_start();
             <div class="col-md-6">
                 <div class="card mt-5">
                     <div class="card-header bg-primary-y734 text-center">
-                        <!-- <img src="assets/img/logo.png" width="50px"> -->
                         <h3 style="color: white;">Login</h3>
                     </div>
                     <div class="card p-5">
